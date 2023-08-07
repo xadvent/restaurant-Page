@@ -1,6 +1,6 @@
 import { makeElementWithClass } from './easyFx'
-import Pizza from './pizza.png'
-import Pasta from './pasta.png'
+import Pizza from '../img/pizza.png'
+import Pasta from '../img/pasta.png'
 
 const makeCard = function (img, name, description) {
     const newCard = makeElementWithClass('div', 'card')
@@ -32,9 +32,7 @@ export const addMenuCards = function () {
     const pastaDescr = 'Pasta is a versatile and beloved staple of Italian cuisine, consisting of dough made from wheat flour, water, and sometimes eggs. It comes in various shapes and sizes, each tailored to complement different sauces and dishes.'
     const pastaCard = makeCard(Pasta, 'Pasta', pastaDescr)
 
-
-
     centerContent.appendChild(pizzaCard);
-    centerContent.appendChild(pastaCard)
-
+    centerContent.appendChild(pastaCard);
+    return
 }

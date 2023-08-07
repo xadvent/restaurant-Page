@@ -1,5 +1,6 @@
 import { makeElementWithClass } from './easyFx';
-import Logo from './restaurantLogo.png'
+import { homePage } from './homePage';
+import Logo from '../img/restaurantLogo.png'
 export default (function () {
     const makeHeader = (function () {
 
@@ -47,6 +48,8 @@ export default (function () {
         linkFooter.textContent = 'Pierce Strutt | Github Repo'
         content.appendChild(footer)
         footer.appendChild(linkFooter)
+
     })();
+
 
 })
