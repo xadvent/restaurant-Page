@@ -64,22 +64,24 @@ a {
     border: 1px solid black;
     border-radius: 10px;
     display: flex;
+    position: relative;
     justify-content: center;
     text-align: center;
-    transition: 0.1s;
+    transition: all 0.25s linear;
 }
 
 #header button:hover {
     cursor: pointer;
     border: 1px solid black;
-    transition: 0.3s;
     scale: 1.1;
 }
-#header button:active {
-    background-color: rgb(192, 0, 0);
+#header #active, 
+#header #active:hover {
+    background-color: lightslategray;
+    margin-top: 5px;
     scale: 1;
-    transition: 0.1s;
-} 
+    cursor: auto;
+}
 
 .center-content,
 body {
@@ -119,15 +121,13 @@ body {
     -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
-    transition: 0.1s;
     overflow: auto;
+    transition: scale 0.3s 0.1s;
 }
+
 .card:hover  {
-    transition: 0.2s;
     scale: 1.02;
-}
-.card:hover:after {
-    transition: 0.2s;
+    transition-duration: 0.3s 0.1s;
 }
 
 .card-img {
@@ -179,7 +179,6 @@ body {
 }
 
 .home-page:hover, #contact-page:hover {
-    transition: 0.5s;
     scale: 1.01;
 }
 
@@ -193,7 +192,7 @@ body {
     width: 80vw;
     height: 90%;
     display: grid;
-    transition: 0.1s;
+    transition: scale 0.5s 0.1s;
 }
 
 #contact-page {
