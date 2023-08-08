@@ -1,4 +1,5 @@
 import { makeElementWithClass } from './easyFx';
+import { makeElementWithID } from './easyFx';
 
 export const homePage = function () {
     const centerContent = document.querySelector('.center-content')
@@ -18,8 +19,7 @@ export const homePage = function () {
     const seperateDescription = document.createElement('h3')
     seperateDescription.textContent = 'We have been in business since 1602. There is a reason why we have stayed around for so long.'
 
-    const descriptionBox = document.createElement('div')
-    descriptionBox.id = 'home-description'
+    const descriptionBox = makeElementWithID('div', 'home-description')
     descriptionBox.appendChild(description)
     descriptionBox.appendChild(newline)
     descriptionBox.appendChild(seperateDescription)

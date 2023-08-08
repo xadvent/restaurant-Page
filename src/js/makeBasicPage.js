@@ -1,11 +1,12 @@
 import { makeElementWithClass } from './easyFx';
+import { makeElementWithID } from './easyFx';
 import { homePage } from './homePage';
 import Logo from '../img/restaurantLogo.png'
+
 export default (function () {
     const makeHeader = (function () {
 
-        const header = document.createElement('div');
-        header.id = 'header'
+        const header = makeElementWithID('div', 'header')
         content.append(header)
 
         const leftHeader = makeElementWithClass('div', 'left-header')
@@ -24,9 +25,8 @@ export default (function () {
 
         const makeLi = function (name) {
             const listItem = document.createElement('li')
-            const listButton = document.createElement('button')
+            const listButton = makeElementWithID('button', name.toLowerCase())
             listButton.classList.add('header-button')
-            listButton.id = name.toLowerCase()
             listButton.textContent = name[0].toUpperCase() + name.substr(1).toLowerCase()
             listItem.appendChild(listButton)
             headerList.appendChild(listItem)
@@ -41,15 +41,11 @@ export default (function () {
     content.appendChild(centerContent)
 
     const makeFooter = (function () {
-        const footer = document.createElement('div')
-        footer.id = 'footer'
+        const footer = makeElementWithID('div', 'footer')
         const linkFooter = document.createElement('a')
         linkFooter.href = './https://www.youtube.com/watch?v=hxGOiiR9ZKg&ab_channel=CodeAesthetic'
         linkFooter.textContent = 'Pierce Strutt | Github Repo'
         content.appendChild(footer)
         footer.appendChild(linkFooter)
-
     })();
-
-
 })
