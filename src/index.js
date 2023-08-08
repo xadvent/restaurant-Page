@@ -4,5 +4,5 @@ import { homePage } from './js/homePage';
 import addButtonEvents from './js/addButtonEvents';
 
 makeBasicPage()
-//homePage()
+homePage()
 addButtonEvents()
