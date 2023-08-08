@@ -1,6 +1,7 @@
 import { makeElementWithClass } from './easyFx'
 import Pizza from '../img/pizza.png'
 import Pasta from '../img/pasta.png'
+import Stick from '../img/cheeseSticks.jpg'
 
 const makeCard = function (img, name, description) {
     const newCard = makeElementWithClass('div', 'card')
@@ -31,8 +32,12 @@ export const addMenuCards = function () {
     const pizzaCard = makeCard(Pizza, 'Italian Pizza', pizzaDescr)
     const pastaDescr = 'Pasta is a versatile and beloved staple of Italian cuisine, consisting of dough made from wheat flour, water, and sometimes eggs. It comes in various shapes and sizes, each tailored to complement different sauces and dishes.'
     const pastaCard = makeCard(Pasta, 'Pasta', pastaDescr)
+    const stickDescr = 'The cheese stick is typically seasoned with a blend of herbs and spices before being coated in a breadcrumb mixture, then fried or baked to achieve a satisfyingly crunchy exterior. When bitten into, the cheese stick reveals a delightful contrast between its crunchy outer layer and the gooey, melted cheese center. With its irresistible combination of textures and flavors, the cheese stick is a popular and indulgent treat enjoyed by people of all ages.'
+    const stickCard = makeCard(Stick, 'Cheese Stick', stickDescr)
+
 
     centerContent.appendChild(pizzaCard);
     centerContent.appendChild(pastaCard);
+    centerContent.appendChild(stickCard)
     return
 }

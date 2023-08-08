@@ -43,7 +43,7 @@ export default (function () {
     const makeFooter = (function () {
         const footer = makeElementWithID('div', 'footer')
         const linkFooter = document.createElement('a')
-        linkFooter.href = './https://www.youtube.com/watch?v=hxGOiiR9ZKg&ab_channel=CodeAesthetic'
+        linkFooter.href = 'https://www.youtube.com/watch?v=hxGOiiR9ZKg&ab_channel=CodeAesthetic'
         linkFooter.textContent = 'Pierce Strutt | Github Repo'
         content.appendChild(footer)
         footer.appendChild(linkFooter)
