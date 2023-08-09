@@ -1,0 +1,23 @@
+import Cheese from '../img/cheeseSticks.jpg'
+import bkgrd from '../img/louis-hansel-Pizzeria.jpg'
+import Pasta from '../img/pasta.png'
+import Pizza from '../img/pizza.png'
+import PB from '../img/pizzaboy.jpeg'
+import Logo from '../img/restaurantLogo.png'
+
+const makeFetch = function (path) {
+    const preload = document.createElement('link')
+    preload.rel = 'prefetch'
+    preload.href = path
+
+    document.head.appendChild(preload)
+}
+
+export default function(){
+    makeFetch(Logo)
+    makeFetch(PB)
+    makeFetch(Pizza)
+    makeFetch(Pasta)
+    makeFetch(bkgrd)
+    makeFetch(Cheese)
+}
