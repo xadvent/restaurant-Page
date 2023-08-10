@@ -16,7 +16,7 @@ body {
     row-gap: 10px;
     background-image: url("../img/louis-hansel-Pizzeria.jpg");
     background-size: 100vh;
-    position: absolute;
+    position:absolute;
     background-attachment:fixed;
     background-size: cover;
 }
@@ -58,14 +58,23 @@ a {
 }
 @media (max-width: 580px) {
     #content {
-        grid-template-rows: 125px 1fr 50px;
-        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
     }
     #content #header {
         flex-direction: column;
+        height: 125px;
+        flex: 0 0 auto;
+    }
+    #content #footer {
+        width: 100vw;
+        height: 50px;
+        flex: 0;
+        padding-bottom: 20px;
     }
     .center-content {
         flex-wrap: nowrap;
+        flex: 1;
     }
     .center-content #contact-page {
         display: flex;
@@ -80,7 +89,6 @@ a {
     .center-content .card {
         width: 90%;
         overflow-y: scroll;
-        text-overflow: ellipsis;
     }
     #header #active {
         margin-top: 0px;
@@ -93,6 +101,17 @@ a {
     #content .center-content .card .card-description {
         text-overflow: ellipsis;
         overflow-y: scroll;
+    }
+    #content #home-page {
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    #content #home-page #home-name {
+        align-self: center;
     }
 }
 
