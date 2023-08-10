@@ -20,4 +20,10 @@ export default function(){
     makeFetch(Pasta)
     makeFetch(bkgrd)
     makeFetch(Cheese)
+
+    const favIcon = document.createElement('link')
+    favIcon.rel = 'icon'
+    favIcon.href = Logo
+    favIcon.type = 'image/x-icon'
+    document.head.appendChild(favIcon)
 }
