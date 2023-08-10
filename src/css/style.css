@@ -1,18 +1,23 @@
+:root {
+    --logo-red: rgb(183, 46, 55);
+    --logo-blue: rgb(78, 150, 175)
+}
+
 html,
 body {
-    width: 100vw;
-    height: 100vh;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #content {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
     display: grid;
     grid-template-rows: 100px 1fr 50px;
     row-gap: 10px;
     background-image: url("../img/louis-hansel-Pizzeria.jpg");
-    background-attachment: fixed;
+    background-size: 100vh;
+    position: absolute;
+    background-attachment:fixed;
     background-size: cover;
 }
 
@@ -51,10 +56,13 @@ a {
     padding: 0px 10px;
     opacity: 0.9;
 }
-@media (max-width: 564px) {
+@media (max-width: 580px) {
     #content {
         grid-template-rows: 125px 1fr 50px;
         padding-bottom: 10px;
+    }
+    #content #header {
+        flex-direction: column;
     }
     #footer {
         position: absolute;
@@ -76,6 +84,20 @@ a {
     }
     .center-content .card {
         width: 90%;
+        overflow-y: scroll;
+        text-overflow: ellipsis;
+    }
+    #header #active {
+        margin-top: 0px;
+        background-color: var(--logo-blue);
+        scale: 0.95;
+    }
+    #content #center-content {
+        height: fit-content;
+    }
+    #content .center-content .card .card-description {
+        text-overflow: ellipsis;
+        overflow-y: scroll;
     }
 }
 
@@ -88,11 +110,11 @@ a {
     list-style: none;
 }
 
-#header button {
+button {
     padding: 8px 10px;
     width: 10vw;
     min-width: 60px;
-    background-color: red;
+    background-color: var(--logo-red);
     color: white;
     border: 1px solid black;
     border-radius: 10px;
@@ -101,16 +123,18 @@ a {
     justify-content: center;
     text-align: center;
     transition: all 0.25s linear;
+    opacity: 1;
+    max-width: 100px;
 }
 
-#header button:hover {
+button:hover {
     cursor: pointer;
     border: 1px solid black;
     scale: 1.1;
 }
-#header #active, 
-#header #active:hover {
-    background-color: lightslategray;
+#active, 
+#active:hover {
+    background-color: var(--logo-blue);
     margin-top: 5px;
     scale: 1;
     cursor: auto;
@@ -131,7 +155,7 @@ a {
     justify-content: center;
     height: 50px;
     padding-top: 5px;
-    border-top: 3px solid red;
+    border-top: 3px solid var(--logo-red);
     background-color: white;
     opacity: 0.9;
     font-size: 18px;
@@ -145,18 +169,20 @@ a {
     max-width: 600px;
     background: white;
     display: grid;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 3fr;
     grid-template-columns: 1fr 2fr;
     border: 2px solid lightslategray;
     border-radius: 10px;
     column-gap: 10px;
     padding: 0px 5px;
-    -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
     overflow: auto;
     transition: scale 0.3s 0.1s;
     opacity: 0.95;
+}
+.card, #home-page, #contact-page {
+    -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .card:hover  {
@@ -165,13 +191,11 @@ a {
 }
 
 .card-img {
-    position: relative;
     grid-row: 1 / -1;
     grid-column: 1 / 2;
-
     width: 200px;
     align-self: center;
-    justify-self: center;
+    justify-self: flex-start;
     border: 1px dotted lightslategray;
 }
 
@@ -180,21 +204,16 @@ a {
 }
 
 .card-description {
-    overflow-y: scroll;
     justify-self: center;
     align-self: start;
 }
 
 
-.home-page {
+#home-page {
     background-image: url(../img/restaurantLogo.png);
     background-position: center;
     background-size: cover;
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(100px, 1fr) 2fr;
     row-gap: 30px;
-}
-.home-page {
     height: 90%;
     width: 80vw;
     max-width: 850px;
@@ -202,10 +221,19 @@ a {
     align-items: center;
     justify-content: center;
 }
+#home-page > * {
+    position: relative;
+    bottom: 10px;
+}
 #home-name {
     text-align: center;
     align-self: end;
     opacity: .9;
+}
+#home-name span {
+    color: var(--logo-red);
+    font-weight: bolder;
+    font-size: xx-large;
 }
 #home-name, #home-description {
     opacity: 0.9;
@@ -219,11 +247,11 @@ a {
     padding: 20px 15px;
 }
 
-.home-page:hover, #contact-page:hover {
+#home-page:hover, #contact-page:hover {
     scale: 1.01;
 }
 
-.home-page, #contact-page {
+#home-page, #contact-page {
     padding: 10px;
     background-color: white;
     border: 2px solid lightslategray;
@@ -258,7 +286,7 @@ a {
 .contact-greet {
     align-self: end;
     margin-bottom: 20px;
-    color: red;
+    color: var(--logo-red);
 }
 
 .contact-phone {
