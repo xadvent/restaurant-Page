@@ -40,8 +40,9 @@ a {
 
 #header {
     position: sticky;
-    display: grid;
-    grid-template-columns: 350px 1fr;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
@@ -50,6 +51,34 @@ a {
     padding: 0px 10px;
     opacity: 0.9;
 }
+@media (max-width: 564px) {
+    #content {
+        grid-template-rows: 125px 1fr 50px;
+        padding-bottom: 10px;
+    }
+    #footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100vw;
+    }
+    .center-content {
+        flex-wrap: nowrap;
+    }
+    .center-content #contact-page {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 95%;
+    }
+    #contact-page .contact-greet {
+        align-self: center;
+    }
+    .center-content .card {
+        width: 90%;
+    }
+}
+
 #header ul{
     display: flex;
     flex-wrap:wrap-reverse;
@@ -91,8 +120,10 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    /* gap: 10vw; */
     gap: 20px;
-    overflow: scroll;
+    flex-wrap: wrap;
 }
 
 #footer {
@@ -107,13 +138,14 @@ a {
 }
 
 .card {
-    position: relative;
+    position: static;
     height: 200px;
     width: 80vw;
     min-width: 355px;
+    max-width: 600px;
     background: white;
     display: grid;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 4fr;
     grid-template-columns: 1fr 2fr;
     border: 2px solid lightslategray;
     border-radius: 10px;
@@ -144,7 +176,7 @@ a {
 }
 
 .card-title {
-    align-self: end;
+    align-self: center;
 }
 
 .card-description {
@@ -162,7 +194,14 @@ a {
     grid-template-rows: minmax(100px, 1fr) 2fr;
     row-gap: 30px;
 }
-
+.home-page {
+    height: 90%;
+    width: 80vw;
+    max-width: 850px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #home-name {
     text-align: center;
     align-self: end;
@@ -185,14 +224,11 @@ a {
 }
 
 .home-page, #contact-page {
-    margin-top: 20px;
     padding: 10px;
     background-color: white;
     border: 2px solid lightslategray;
     border-radius: 15px;
     opacity: 0.97;
-    width: 80vw;
-    height: 90%;
     display: grid;
     transition: scale 0.5s 0.1s;
 }
@@ -200,6 +236,13 @@ a {
 #contact-page {
     text-align: center;
     grid-template-rows: 80px 1fr 80px;
+    grid-template-columns: 1fr ;
+    overflow-y: scroll;
+}
+
+#contact-form {
+    grid-row: 2;
+    grid-column: 2;
 }
 
 #pizza-boy {
@@ -208,6 +251,8 @@ a {
     justify-self: center;
     max-width: 550px;
     height: auto;
+    grid-row: 2;
+    grid-column: 1;
 }
 
 .contact-greet {

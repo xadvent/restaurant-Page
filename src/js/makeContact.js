@@ -13,7 +13,7 @@ export const makeContact =  function () {
     const contactUs = makeElementWithClass('h1', 'contact-greet')
     contactUs.textContent = 'Contact us now!'
     const phoneNumber = makeElementWithClass('h2', 'contact-phone')
-    phoneNumber.textContent = '+1 123-999-9999'
+    phoneNumber.textContent = '+1 (123) 999-9999'
 
     contactBox.appendChild(contactUs)
     contactBox.appendChild(pizzaboy)

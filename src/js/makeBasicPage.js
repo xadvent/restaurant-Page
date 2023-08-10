@@ -1,7 +1,6 @@
 import { makeElementWithClass } from './easyFx';
 import { makeElementWithID } from './easyFx';
 import addPreload from './addPreload';
-import { homePage } from './homePage';
 import Logo from '../img/restaurantLogo.png'
 
 export default (function () {
