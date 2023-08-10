@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "clean": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npx webpack --watch",
@@ -14,8 +13,11 @@
   "license": "MIT",
   "devDependencies": {
     "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
     "style-loader": "^3.3.3",
+    "terser": "^5.19.2",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }
