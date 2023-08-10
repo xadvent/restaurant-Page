@@ -12,9 +12,10 @@ What I learned in this project:
   - Proper implementation of 'Media' based on max screen-width
   - Proper use of the 'transition' property for CSS
   - Animations and the way they affect one another
+  - Prefetching IMG's to decrease time between element deletion/creation
 
 Live page<a href='https://xadvent.github.io/restaurant-Page/'> found here</a>
 
 Revisiting at another time and add the following:
   - Form to the contact page
-	- Google Maps API to the contact page
+  - Google Maps API to the contact page
